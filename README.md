@@ -1,3 +1,9 @@
+- post url to ipify API / done
+- Fetch data in json / done
+- using data update setview and marker position(setLatLng) on map. / done
+- get input data and store it to a variable. /done
+
+
 # Frontend Mentor - IP Address Tracker
 
 ![Design preview for the IP Address Tracker coding challenge](./design/desktop-preview.jpg)
