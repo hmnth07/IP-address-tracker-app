@@ -52,7 +52,7 @@ async function myFunction(){
     url = await api_url + 'apiKey=' + api_key + '&ipAddress=' + ip + '&domain=' + domain;
     console.log(url);
     
-    // getData();
+    getData();
 }
 
 const marker = L.marker([0, 0], {icon: locationIcon}).addTo(mymap);
@@ -73,4 +73,4 @@ async function getData() {
     document.getElementById('box3').textContent = 'UTC' + data.location.timezone;
     document.getElementById('box4').textContent = data.isp;
 }
-// getData();
+getData();
