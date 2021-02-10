@@ -32,15 +32,15 @@ var url = api_url + 'apiKey=' + api_key + '&ipAddress=' + ip + '&domain=' + doma
 async function myFunction(){
     document.getElementById("demo").style.display = "none"; // Input Alert display reset to none on next click.
 
-    var input =  document.getElementById('ipAddress').value;
+    var inputvalue =  document.getElementById('ipAddress').value;
 
-     if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(input))
+     if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(inputvalue))
       {
         console.log('its an IP address');
-        ip = input;
-      } else if(/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+$/.test(input)) {  
+        ip = inputvalue;
+      } else if(/^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+$/.test(inputvalue)) {  
         console.log("its a domain name");
-        domain = input;
+        domain = inputvalue;
       } else {
         // alert("please enter a valid IP address or domain name!");
         document.getElementById("demo").style.display = "block";
@@ -54,6 +54,16 @@ async function myFunction(){
     
     getData();
 }
+
+// Trigger button on clicking enter
+var input = document.getElementById("ipAddress");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+}); 
+// _____________________Enter button close
 
 const marker = L.marker([0, 0], {icon: locationIcon}).addTo(mymap);
 
